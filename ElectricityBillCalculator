@@ -1,0 +1,39 @@
+public class ElectricityBillCalculator {
+
+        public static double calculateElectricityBill(int units) {
+            double bill = 0;
+    
+            if (units <= 50) {
+                bill = units * 0.50;
+            } else if (units <= 150) {
+                bill = 50 * 0.50 + (units - 50) * 0.75;
+            } else if (units <= 250) {
+                bill = 50 * 0.50 + 100 * 0.75 + (units - 150) * 1.20;
+            } else {
+                bill = 50 * 0.50 + 100 * 0.75 + 100 * 1.20 + (units - 250) * 1.50;
+            }
+    
+            // Add 20% surcharge to the bill
+            double surcharge = bill * 0.20;
+            bill += surcharge;
+    
+            return bill;
+        }
+    
+        public static void main(String[] args) {
+            int units1 = 30;
+            int units2 = 130;
+            int units3 = 230;
+    
+            double bill1 = calculateElectricityBill(units1);
+            double bill2 = calculateElectricityBill(units2);
+            double bill3 = calculateElectricityBill(units3);
+    
+            System.out.println("Electricity Bill for " + units1 + " units: Rs. " + bill1);
+            System.out.println("Electricity Bill for " + units2 + " units: Rs. " + bill2);
+            System.out.println("Electricity Bill for " + units3 + " units: Rs. " + bill3);
+        }
+    }
+    
+    
+
