@@ -5,7 +5,7 @@ class CountCharacterOccurence
     {
         String s = "Java is java again java again";
  
-        char c = 'a';
+        // char c = 'a';
  
         int count = s.length() - s.replace("a", "").length();
  
